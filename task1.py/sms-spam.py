@@ -1,6 +1,8 @@
 import tkinter as tk
-from tkinter import scrolledtext
+from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
+from PIL import Image,ImageTk
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -95,11 +97,12 @@ def classify_message():
 # Create Tkinter window
 window = tk.Tk()
 window.title("Spam Classifier")
-window.geometry("800x800")
+window.geometry("470x580+300+200")
+window.configure(bg="#f0f1f5")
 
-# Create text input box
-input_text = scrolledtext.ScrolledText(window, wrap=tk.WORD, width=40, height=10)
+input_text = tk.Entry(window)
 input_text.pack(pady=10)
+
 
 # Create classify button
 classify_button = tk.Button(window, text="Classify", command=classify_message)
